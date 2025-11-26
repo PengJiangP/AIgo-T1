@@ -1,0 +1,63 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "AlgoT1-NET",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/algot1_sdk/build-debug/demo/AlgoDemo_AlgoT1",
+      "args": [
+        "-i ./algo-algot1.json",
+        "-o ./"
+      ],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/algot1_sdk/build-debug/demo",
+      "environment": [
+        {
+          "name": "LD_LIBRARY_PATH",
+          "value": "${LD_LIBRARY_PATH}:${workspaceFolder}/algot1_sdk/build-debug/demo"
+        }
+      ],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "",
+      "miDebuggerPath": "/usr/bin/gdb"
+    },
+    {
+      "name": "AlgoT1-COM",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/algot1_sdk/build-debug/demo/AlgoDemo_AlgoT1COM",
+      "args": [
+        "-i ./algo-algot1-com.json",
+        "-o ./"
+      ],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/algot1_sdk/build-debug/demo",
+      "environment": [
+        {
+          "name": "LD_LIBRARY_PATH",
+          "value": "${LD_LIBRARY_PATH}:${workspaceFolder}/algot1_sdk/build-debug/demo"
+        }
+      ],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "",
+      "miDebuggerPath": "/usr/bin/gdb"
+    }
+  ]
+}

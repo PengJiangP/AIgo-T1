@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>algot1_sdk</name>
+  <version>0.0.0</version>
+  <description>ROS driver for algotech device</description>
+  <maintainer email="283422622@qq.com">AlgoTech</maintainer>
+  <license>BSD 3-Clause</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <export>
+    <!-- Other tools can request additional information be placed here -->
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

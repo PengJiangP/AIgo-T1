@@ -1,0 +1,26 @@
+{
+  "AlgoT1": {
+    "com_1_settings": {
+      "enable": 1,
+      "type": "SERIAL",
+      "name": "ttyUSB1",
+      "bitrate": 115200,
+      "bytesize": 8,
+      "parity": "none",
+      "stopbits": 1,
+      "startcmd": "log inspvaxa ontime 0.01",
+      "description": ""
+    },
+    "com_2_settings": {
+      "enable": 1,
+      "type": "SERIAL",
+      "name": "ttyUSB0",
+      "bitrate": 115200,
+      "bytesize": 8,
+      "parity": "none",
+      "stopbits": 1,
+      "startcmd": "log gpgga ontime 0.1",
+      "description": ""
+    }
+  }
+}

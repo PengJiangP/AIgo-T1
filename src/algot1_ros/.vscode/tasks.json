@@ -1,0 +1,27 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "build-algot1_sdk-debug",
+            "command": "sh ${workspaceFolder}/algot1_sdk/build-ubuntu.sh debug",
+            "args": [],
+            "options": {},
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        },
+        {
+            "type": "shell",
+            "label": "build-algot1_sdk-release",
+            "command": "sh ${workspaceFolder}/algot1_sdk/build-ubuntu.sh",
+            "args": [],
+            "options": {},
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        }
+    ]
+}

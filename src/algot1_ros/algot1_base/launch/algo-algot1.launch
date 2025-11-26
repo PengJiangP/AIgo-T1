@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="odom_frame" default="odom" />
+    <arg name="base_frame" default="base_link" />
+
+    <!-- topic name -->
+    <arg name="topic_cam0" default="/cam0" />
+    <arg name="topic_cam1" default="/cam1" />
+    <arg name="topic_cam2" default="/cam2" />
+    <arg name="topic_imu" default="/imu0" />
+
+     <!--经纬度改为百泰 -->
+    <arg name="ref_B" default="18.32914766" />
+    <arg name="ref_L" default="109.16565030" />
+    <arg name="ref_H" default="14.0" />
+
+    <!--config_type = 0, using net to read data, all data -->
+    <arg name="config_type" default="0" />
+    <arg name="config_pathname" default="$(find algot1_base)/config/algo-algot1.json" />
+    <arg name="is_save" default="1" />
+    <arg name="root_save" default="$(find algot1_base)/data" />
+    <arg name="usb_cam0" default="0" />
+    <arg name="usb_cam1" default="0" />
+    
+    <node name="algo_algot1_node" pkg="algot1_base" type="algo_algot1_node" output="screen" 
+          args=" -i $(arg config_pathname) -t $(arg config_type) -s $(arg is_save) -o $(arg root_save) -u $(arg usb_cam0) -v $(arg usb_cam1)">
+        <param name="odom_frame" value="$(arg odom_frame)" />
+        <param name="base_frame" value="$(arg base_frame)" />
+        <param name="topic_cam0" value="$(arg topic_cam0)" />
+        <param name="topic_cam1" value="$(arg topic_cam1)" />
+        <param name="topic_cam2" value="$(arg topic_cam2)" />
+        <param name="topic_imu" value="$(arg topic_imu)" />
+        <param name="ref_B" value="$(arg ref_B)" />
+        <param name="ref_L" value="$(arg ref_L)" />
+        <param name="ref_H" value="$(arg ref_H)" /> 
+    </node>
+    <include file="$(find algot1_base)/launch/navsat_transform.launch"/>
+	<!-- 
+	<node name="algot1_rviz" pkg="rviz" type="rviz" 
+          args="-d $(find algot1_base)/rviz/algo-algot1.rviz">
+    </node> 
+     -->
+     
+</launch>

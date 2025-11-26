@@ -1,0 +1,26 @@
+cmake_minimum_required(VERSION 3.5)
+project(algot1_sdk)
+
+
+if(ROS1)
+    find_package(catkin QUIET COMPONENTS roscpp rosbag sensor_msgs cv_bridge)
+    if (catkin_FOUND)
+        message(STATUS "ROS *1* version found, building ROS1")
+        include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/ROS1.cmake)
+    else()
+        message(FATAL_ERROR ${PROJECT_NAME}": No ROS1 versions found")
+    endif()
+elseif(ROS2)
+    find_package(ament_cmake )
+    if (ament_cmake_FOUND)
+        message(STATUS "ROS *2* version found, building ROS2")
+        include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/ROS2.cmake)
+    else()
+        message(FATAL_ERROR ${PROJECT_NAME}": No ROS2 versions found")
+    endif()
+else()
+    #default NOROS
+    message(STATUS ${PROJECT_NAME}": building NOROS")
+    include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/NOROS.cmake)
+endif()
+

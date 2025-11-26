@@ -1,0 +1,32 @@
+cmake_minimum_required(VERSION 3.5)
+project(algot1_base)
+
+# Default to C++14
+if(NOT CMAKE_CXX_STANDARD)
+  set(CMAKE_CXX_STANDARD 14)
+endif()
+
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  add_compile_options(-Wall -Wextra -Wpedantic)
+endif()
+#set(OpenCV_DIR /home/htwu/opencv-4.2.0/build)
+#FIND_PACKAGE(OpenCV 4.2.0 REQUIRED)
+set(USE_OPENCV ON)
+
+if(ROS2)
+    find_package(ament_cmake QUIET)
+    if (ament_cmake_FOUND)
+        message(STATUS "ROS *2* version found, building ROS2")
+        include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/ROS2.cmake)
+    else ()
+        message(ERROR "No ROS2 versions found")
+    endif ()
+else()#default ROS1
+    find_package(catkin QUIET COMPONENTS roscpp rosbag sensor_msgs cv_bridge)
+    if (catkin_FOUND)
+        message(STATUS "ROS *1* version found, building ROS1")
+        include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/ROS1.cmake)
+    else()
+        message(ERROR "No ROS1 versions found")
+    endif ()
+endif()

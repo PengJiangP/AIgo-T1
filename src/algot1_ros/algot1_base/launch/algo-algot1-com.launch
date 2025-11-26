@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="odom_frame" default="odom" />
+    <arg name="base_frame" default="base_link" />
+
+    <arg name="topic_cam0" default="/cam1" />
+    <arg name="topic_cam1" default="/cam0" />
+    <arg name="topic_imu" default="/imu0" />
+
+     <!--ENU oringe,Geodesy BLH, unit: deg deg m -->
+    <arg name="ref_B" default="031.16658400" />
+    <arg name="ref_L" default="121.28810766" />
+    <arg name="ref_H" default="4.560" />
+    
+    <!--config_type = 1, using serial to read data, only insp and gga -->
+    <arg name="config_type" default="1" />
+    <arg name="config_pathname" default="$(find algot1_base)/config/algo-algot1-com.json" />
+
+    <node name="algo_algot1_node" pkg="algot1_base" type="algo_algot1_node" output="screen" 
+          args=" -i $(arg config_pathname) -t $(arg config_type)">
+        <param name="odom_frame" value="$(arg odom_frame)" />
+        <param name="base_frame" value="$(arg base_frame)" />
+
+        <param name="topic_cam0" value="$(arg topic_cam0)" />
+        <param name="topic_cam1" value="$(arg topic_cam1)" />
+        <param name="topic_imu" value="$(arg topic_imu)" />
+
+        <param name="ref_B" value="$(arg ref_B)" />
+        <param name="ref_L" value="$(arg ref_L)" />
+        <param name="ref_H" value="$(arg ref_H)" />
+
+    </node>
+
+	<node name="algot1_rviz" pkg="rviz" type="rviz" 
+          args="-d $(find algot1_base)/rviz/algo-algot1-com.rviz"/>
+          
+</launch>

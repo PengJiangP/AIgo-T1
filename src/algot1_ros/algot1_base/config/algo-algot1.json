@@ -1,0 +1,81 @@
+{
+  "AlgoT1": {
+    "net_cam1_settings": {
+      "ip": "192.168.1.168",
+      "port": 9000,
+      "type": "TCPCLI",
+      "startcmd":"",
+      "description": ""
+    },
+    "net_cam2_settings": {
+      "ip": "192.168.1.168",
+      "port": 9001,
+      "type": "TCPCLI",
+      "startcmd":"",
+      "description": ""
+    },
+    "net_1_settings": {
+      "ip": "192.168.1.168",
+      "port": 9002,
+      "type": "TCPCLI",
+      "startcmd":"",
+      "description": ""
+    },
+    "net_2_settings": {
+      "ip": "192.168.1.168",
+      "port": 9003,
+      "type": "TCPCLI",
+      "startcmd":"",
+      "description": ""
+    },
+    "net_3_settings": {
+      "ip": "192.168.1.168",
+      "port": 9004,
+      "type": "TCPCLI",
+      "startcmd":"",
+      "description": ""
+    },
+    "net_4_settings": {
+      "ip": "192.168.1.168",
+      "port": 9005,
+      "type": "TCPCLI",
+      "startcmd":"",
+      "description": ""
+    },
+    "net_5_settings": {
+      "ip": "192.168.1.168",
+      "port": 9006,
+      "type": "TCPCLI",
+      "startcmd":" log inspvaxa ontime 0.1",
+      "description": "inspavax"
+    },
+    "net_6_settings": {
+      "ip": "192.168.1.168",
+      "port": 9007,
+      "type": "TCPCLI",
+      "startcmd":"",
+      "description": ""
+    },
+    "net_7_settings": {
+      "ip": "192.168.1.168",
+      "port": 9008,
+      "type": "TCPCLI",
+      "startcmd":"",
+      "description": ""
+    },
+    "net_8_settings": {
+      "ip": "192.168.1.168",
+      "port": 9009,
+      "type": "TCPCLI",
+      "startcmd":" log gprmc ontime 1",
+      "description": ""
+    },
+    "net_vins_settings": {
+      "ip": "192.168.1.168",
+      "port": 9010,
+      "type": "TCPCLI",
+      "startcmd":"",
+      "description": ""
+    }
+  }
+}

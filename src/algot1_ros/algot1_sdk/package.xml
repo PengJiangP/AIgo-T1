@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>algot1_sdk</name>
+  <version>0.0.0</version>
+  <description>ROS driver for algotech device</description>
+  <maintainer email="283422622@qq.com">AlgoTech</maintainer>
+  <license>BSD 3-Clause</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+
+</package>
